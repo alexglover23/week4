@@ -10,6 +10,8 @@ let quotes = [
   "You had me at 'hello'."
 ]
 
+
+
 // Tasks:
 // 1) loop through the movie quotes and write them to the output (with Tailwind)
 // 2) refactor into cleaner, easier-to-understand functions
@@ -20,7 +22,29 @@ let quotes = [
 // Element.insertAdjacentHTML(position, text)
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 
-window.addEventListener('DOMContentLoaded', function() {
+function appendQuote(quote) {
+  // 1b. write them to the output (with Tailwind)
   let outputElement = document.querySelector('.output')
-  outputElement.insertAdjacentHTML('beforeend', 'Hello!')
-})
+  outputElement.insertAdjacentHTML('beforeend', `<h1 class="font-bold my-8">${quote}</h1>`)
+
+}
+
+function pageLoaded() {
+// 1a. loop through the movie quotes
+  for (let i = 0; i < quotes.length; i++) {
+    // console.log(`hey, index is: ${i}`)
+    let quote = quotes[i]
+    // console.log(quote)
+    // 1b. we call the function we defined above, which writes the quotes to the page
+    appendQuote(quote)
+  }
+
+}
+
+window.addEventListener('DOMContentLoaded', pageLoaded)
+  // ".output" looks for element in html with class output
+  // let outputElement = document.querySelector('.output')
+  // outputElement.insertAdjacentHTML('beforeend', 'Hello!')
+
+  
+
