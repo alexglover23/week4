@@ -21,6 +21,7 @@ async function pageLoaded() {
   
   let products = json.products
   console.log(products)
+  
   // 4a. define renderProduct function
   let renderProduct = function(variable) {
     return `
